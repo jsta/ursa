@@ -270,7 +270,7 @@ class LammpsAgent(BaseAgent):
     def _run_lammps(self, state: LammpsState) -> LammpsState:
         print ("Running LAMMPS....")
         result = subprocess.run(
-            [self.mpirun_cmd, "-np", str(self.mpi_procs), self.lammps_cmd, "-in", "in.lammps"],
+            [self.mpirun_cmd, "-n", str(self.mpi_procs), self.lammps_cmd, "-in", "in.lammps"],
             cwd=self.workspace,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,

@@ -16,11 +16,11 @@ workspace = "./workspace_eos_cu"
 wf = LammpsAgent(
     llm = llm,
     max_potentials=2,
-    max_fix_attempts=5,      
+    max_fix_attempts=10,      
     mpi_procs=8,
     workspace = workspace,
-    lammps_cmd="lmp_mpi",
-    mpirun_cmd="mpirun",
+    lammps_cmd="lmp",
+    mpirun_cmd="srun",
 )
 
 simulation_task="Carry out a LAMMPS simulation of Cu to determine its equation of state."
