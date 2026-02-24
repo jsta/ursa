@@ -22,4 +22,4 @@ jobs:
         run: uv pip compile pyproject.toml -q --no-annotate --universal --group dev -o requirements.txt
       - name: Run audit
         run: |
-          uv run pip-audit -r requirements.txt 
+          uv run pip-audit -l
