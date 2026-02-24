@@ -17,10 +17,9 @@ jobs:
       - name: install project
         run: |
           uv sync --all-extras --dev
-          uv add pip
+          uv add pip-audit
       - name: Generate requirements.txt
         run: uv pip compile pyproject.toml -q --no-annotate --universal --group dev -o requirements.txt
-      - uses: pypa/gh-action-pip-audit@v1.1.0
-        with:
-          inputs: requirements.txt
-          virtual-environment: .venv/
+      - name: Run audit
+        run: |
+          uv run pip-audit -r requirements.txt 
