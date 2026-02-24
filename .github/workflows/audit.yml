@@ -14,7 +14,9 @@ jobs:
           enable-cache: true
           cache-dependency-glob: pyproject.toml
       - name: install project
-        run: uv sync --all-extras --dev
+        run: |
+          uv sync --all-extras --dev
+          uv add pip
       - uses: pypa/gh-action-pip-audit@v1.0.0
         with:
           inputs: pyproject.toml
