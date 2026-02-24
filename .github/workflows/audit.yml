@@ -19,7 +19,7 @@ jobs:
           uv add pip
       - name: Generate requirements.txt
         run: uv pip compile pyproject.toml -q --no-annotate --universal --group dev -o requirements.txt
-      - uses: pypa/gh-action-pip-audit@v1.0.0
+      - uses: pypa/gh-action-pip-audit@v1.1.0
         with:
           inputs: requirements.txt
           virtual-environment: .venv/
