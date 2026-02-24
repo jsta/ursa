@@ -2,6 +2,7 @@ name: Audit
 on:
   push:
     branches: [jsta]
+  workflow_dispatch:
 jobs:
   pip-audit:
     runs-on: ubuntu-latest
